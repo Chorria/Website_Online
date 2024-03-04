@@ -1,0 +1,707 @@
+/*#region 基础设置 */
+
+/* 版心样式 */
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+/* logo 动画 */
+@keyframes moveLogo {
+    0% {
+        transform: translate(0px);
+    }
+
+    100% {
+        transform: translate(400px) rotate(360deg);
+        border: 1px solid black;
+        border-radius: 50%;
+        background-color: #DDD;
+        box-shadow: 0 0 20px black;
+    }
+}
+
+/* 移动样式 */
+.move {
+    animation: 2s 0.2s linear moveLogo 2 alternate;
+}
+
+/*#endregion 基础设置 */
+
+/*#region 头部样式 */
+
+/*##region 顶部导航条样式 */
+.topbar {
+    background-color: #ECECEC;
+}
+
+.topbar .container {
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .welcome {
+    font-size: 0;
+}
+
+.topbar .welcome>span,
+.topbar .welcome>a {
+    font: 400 12px "PingFangSC-Regular","Microsoft YaHei",sans-serif;
+    color: #666;
+}
+
+.topbar .welcome>span:first-child {
+    margin-right: 28px;
+}
+
+.topbar .welcome>a {
+    transition: 0.25s all linear;
+}
+
+.topbar .welcome>a:hover {
+    color: #DD302D;
+}
+
+.topbar .welcome>a:nth-of-type(1) {
+    padding-right: 10px;
+    border-right: 1px solid #666;
+}
+
+.topbar .welcome>a:last-child {
+    margin-left: 10px;
+}
+
+.topbar .list {
+    display: flex;
+}
+
+.topbar .center-list .list li>a {
+    transition: 0.25s all linear;
+}
+
+.topbar .center-list .list li:not(:last-child)>a {
+    padding-right: 15px;
+    border-right: 1px solid #666;
+}
+
+.topbar .center-list .list li:not(:first-child)>a {
+    margin-left: 15px;
+}
+
+.topbar .center-list .list li>a:hover {
+    color: #DD302D;
+}
+/*##endregion 顶部导航条样式 */
+
+/*##region 搜索框样式 */
+.search-box .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0;
+}
+
+.search-box .logo {
+    width: 590px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.search-box .search input {
+    width: 510px;
+    height: 36px;
+    border: 1px solid #DD302D;
+    transition: 0.25s all linear;
+}
+
+.search-box .search input::placeholder {
+    color: rgba(225, 159, 37, 0.8);
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.search-box .search button {
+    width: 80px;
+    height: 36px;
+    background-color: #DD302D;
+    background-image: url("../assets/serch_icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: top;
+    cursor: pointer;
+    transition: 0.25s all linear;
+}
+
+
+
+/* 输入框获取焦点样式 */
+.input-on-focus {
+    border-radius: 100px 0 0 100px;
+    padding-left: 20px;
+
+
+    
+}
+
+.button-on-change {
+    border-radius: 0 100px 100px 0;
+}
+/*##endregion 搜索框样式 */
+
+/*##region 全部分类样式 */
+.all-category {
+    height: 48px;
+    border-bottom: 1px solid #DD302D;
+}
+
+.all-category .container {
+    display: flex;
+    align-items: center;
+}
+
+.all-category .title {
+    width: 190px;
+    height: 48px;
+    font: 500 16px "PingFangSC-Medium","Microsoft YaHei",sans-serif;
+    color: #FFF;
+    background-color: #DD302D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.25s all linear;
+}
+
+.all-category .title:hover {
+    border-radius: 100px;
+    box-shadow: 0 0 20px black;
+    transform: translate(0, -10px) scale(1.02);
+}
+
+.all-category .category-list .list {
+    display: flex;
+    transition: 0.25s all linear;
+}
+
+.all-category .category-list .list li:first-child {
+    margin-left: 10px;
+}
+
+.all-category .category-list .list li:not(:first-child) {
+    margin-left: 20px;
+}
+
+.all-category .category-list .list li:hover {
+    background-color: #DD302D;
+    box-shadow: 0 0 10px black;
+    transform: translate(-10px);
+    padding: 0 20px;
+    border-radius: 100px;
+}
+
+.all-category .category-list .list li>a {
+    font: 500 16px "PingFangSC-Medium","Microsoft YaHei",sans-serif;
+    color: #333;
+    transition: 0.25s all linear;
+}
+
+.all-category .category-list .list li:hover>a {
+    color: #FFF;
+}
+/*##endregion 全部分类样式 */
+
+/*#endregion 头部样式 */
+
+/*#region 内容区样式 */
+
+/*#region 主内容区样式 */
+.main-content {
+    margin-top: 10px;
+}
+
+.main-content .container {
+    display: flex;
+}
+
+/*#region 侧边导航区样式 */
+
+.main-content .aside-nav {
+    width: 190px;
+    background-color: #F4F4F4;
+}
+
+.main-content .aside-nav .nav-list {
+    width: 190px;
+    height: 458px;
+    position: relative;
+    display: flow-root;
+}
+
+.main-content .nav-list li {
+    width: 174px;
+    height: 20px;
+    line-height: 20px;
+    margin: 8px 0;
+    padding-left: 16px;
+    cursor: pointer;
+    transition: 0.25s all linear;
+}
+
+.main-content .nav-list li:hover {
+    background-color: #DD302D;
+    border-radius: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.main-content .nav-list li:first-child {
+    margin-top: 9px;
+}
+
+.main-content .nav-list li:last-child {
+    margin-bottom: 9px;
+}
+
+.main-content .nav-list li:hover>em {
+    color: #FFF;
+}
+
+.main-content .nav-list .sub-category {
+    width: 680px;
+    height: 440px;
+    position: absolute;
+    top: 0;
+    left: 190px;
+    padding: 18px 0 0 20px;
+    background-color: #E3E3E3;
+    transition: 0.25s all linear;
+    display: none;
+}
+
+.main-content .nav-list li:hover>.sub-category {
+    display: block;
+}
+
+.main-content .nav-list .category-list {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.main-content .nav-list .category-list dt {
+    font: bold 14px "PingFangSC-Medium","Microsoft YaHei",sans-serif;
+    color: #000;
+    margin-right: 10px;
+}
+
+.main-content .nav-list .category-list dd>a {
+    font: lighter 14px "PingFangSC-Medium","Microsoft YaHei",sans-serif;
+    padding: 0 10px;
+    border-left: 1px solid #999;
+    color: #666;
+}
+
+.main-content .nav-list .category-list dd:last-child>a {
+    padding-right: 0;
+}
+
+.main-content .nav-list li>em {
+    font: 500 14px "PingFangSC-Medium","Microsoft YaHei",sans-serif;
+    color: #000;
+}
+/*#endregion 侧边导航区样式 */
+
+/*#region 广告轮播区样式 */
+.main-content img {
+    margin: 0 10px;
+    cursor: pointer;
+}
+/*#endregion 广告轮播区样式 */
+
+/*#region 侧边消息区样式 */
+.main-content .message-box .message {
+    width: 260px;
+    height: 128px;
+    border: 1px solid #D9D9D9;
+    padding: 14px;
+}
+
+.main-content .message .header {
+    font-size: 0;
+    border-bottom: 1px solid #D9D9D9;
+    margin-top: 1px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-content .header .title {
+    font: bold 14px "PingFangSC-Regular","Microsoft YaHei",sans-serif;
+}
+
+.main-content .header a {
+    font: 12px "PingFangSC-Regular","Microsoft YaHei",sans-serif;
+    color: #999;
+    transition: 0.25s all linear;
+}
+
+.main-content .header a:hover {
+    border: 1px solid #DD302D;
+    border-radius: 20px;
+    color: #000;
+    padding: 0 10px;
+}
+
+.main-content .content-list {
+    margin-top: 2px;
+}
+
+.main-content .content-list li {
+    width: 262px;
+    height: 26px;
+    line-height: 26px;
+    transition: 0.25s all linear;
+}
+
+.main-content .content-list li:hover {
+    box-sizing: border-box;
+    padding: 0 10px;
+    background-color: #DD302D;
+    border-radius: 100px;
+}
+
+.main-content .content-list li:first-child {
+    margin-top: 2px;
+}
+
+.main-content .content-list li>a {
+    font: 12px "PingFangSC-Regular","Microsoft YaHei",sans-serif;
+    color: #666;
+    transition: 0.25s all linear;
+}
+
+.main-content .content-list li:hover>a {
+    color: #FFF;
+}
+
+.main-content .message-box .nav-other {
+    width: 258px;
+    height: 258px;
+    margin-top: 10px;
+    padding: 16px;
+}
+
+.main-content .message-box .other-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-content .message-box .other-list:nth-child(2) {
+    margin: 17px 0;
+}
+
+.main-content .message-box .nav-other li {
+    width: 48px;
+    height: 70px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s all linear;
+}
+
+.main-content .message-box .nav-other li:hover {
+    border-radius: 20px;
+    transform: translate(0, -10px) scale(1.02);
+    border: 1px solid #DD302D;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.main-content .message-box .nav-other li>.icon {
+    width: 48px;
+    height: 48px;
+    background-image: url("../assets/精灵图-侧边功能.png");
+}
+
+/* 第一行 */
+.main-content .message-box .other-list:first-child li:nth-child(1)>.icon{
+    background-position: 0 0;
+}
+.main-content .message-box .other-list:first-child li:nth-child(2)>.icon{
+    background-position: -48px 0;
+}
+.main-content .message-box .other-list:first-child li:nth-child(3)>.icon{
+    background-position: -96px 0;
+}
+.main-content .message-box .other-list:first-child li:nth-child(4)>.icon{
+    background-position: -144px 0;
+}
+/* 第二行 */
+.main-content .message-box .other-list:nth-child(2) li:nth-child(1)>.icon{
+    background-position: 0 -48px;
+}
+.main-content .message-box .other-list:nth-child(2) li:nth-child(2)>.icon{
+    background-position: -48px -48px;
+}
+.main-content .message-box .other-list:nth-child(2) li:nth-child(3)>.icon{
+    background-position: -96px -48px;
+}
+.main-content .message-box .other-list:nth-child(2) li:nth-child(4)>.icon{
+    background-position: -144px -48px;
+}
+/* 第三行 */
+.main-content .message-box .other-list:last-child li:nth-child(1)>.icon{
+    background-position: 0 -96px;
+}
+.main-content .message-box .other-list:last-child li:nth-child(2)>.icon{
+    background-position: -48px -96px;
+}
+.main-content .message-box .other-list:last-child li:nth-child(3)>.icon{
+    background-position: -96px -96px;
+}
+.main-content .message-box .other-list:last-child li:nth-child(4)>.icon{
+    background-position: -144px -96px;
+}
+
+/*#endregion 侧边消息区样式 */
+
+
+/*#endregion 主内容区样式 */
+
+/*#region 秒杀样式 */
+.content .seckill {
+    margin-top: 10px;
+}
+
+.seckill .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.seckill img:nth-child(-n+4) {
+    cursor: pointer;
+    transition: 0.25s all linear;
+}
+
+.seckill img:nth-child(-n+4):hover {
+    transform: translate(0, -5px) scale(1.02);
+    box-shadow: 0 0 20px black;
+    border-radius: 20px;
+}
+/*#endregion 秒杀样式 */
+
+/*#region 楼层样式 */
+.content .floor {
+    margin-top: 48px;
+}
+.floor .floor-top {
+    display: flex;
+    height: 34px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #DD302D;
+}
+
+.floor .floor-top .title {
+    font: bold 20px "PingFangSC-Regular","Microsoft YaHei",sans-serif;
+    color: #000;
+}
+
+.floor .floor-top .nav-list {
+    display: flex;
+}
+
+.floor .floor-top .nav-list li>a {
+    font: lighter 16px "PingFangSC-Regular","Microsoft YaHei",sans-serif;
+    color: #666;
+}
+
+.floor .floor-top .nav-list li>a:hover {
+    color: #DD302D;
+}
+
+.floor .floor-top .nav-list li:not(:last-child)>a {
+    padding-right: 10px;
+    border-right: 1px solid #666;
+}
+
+.floor .floor-top .nav-list li:not(:first-child)>a {
+    padding-left: 10px;
+}
+
+.floor .floor-bottom {
+    display: flex;
+}
+
+.floor .floor-bottom .item:first-child {
+    width: 190px;
+    height: 392px;
+    padding: 20px;
+    background-color: #F4F4F4;
+}
+
+.floor .floor-bottom .item .item-nav .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.floor .floor-bottom .item .item-nav .nav-list li {
+    width: 90px;
+    text-align: center;
+    padding-bottom: 3.5px;
+    border-bottom: 1px solid #D9D9D9;
+    transition: 0.25s all linear;
+}
+
+.floor .floor-bottom .item .item-nav .nav-list li:hover {
+    border-bottom: 1px solid #DD302D;
+}
+
+.floor .floor-bottom .item .item-nav .nav-list li>a {
+    font: lighter 16px "PingFangSC-Regular","Microsoft YaHei",sans-serif;
+    color: #666;
+    transition: 0.25s all linear;
+}
+
+.floor .floor-bottom .item .item-nav .nav-list li:hover>a {
+    color: #DD302D;
+    font-weight: bold;
+}
+
+.floor .floor-bottom .item>img {
+    cursor: pointer;
+    transition: 0.25s all linear;
+}
+
+.floor .floor-bottom .item>img:hover {
+    transform: translate(0, -5px) scale(1.02);
+    box-shadow: 0 0 20px black;
+    border-radius: 20px;
+}
+
+.floor .floor-bottom .item .item-nav .nav-list li:nth-child(3),
+.floor .floor-bottom .item .item-nav .nav-list li:nth-child(4) {
+    margin: 14px 0;
+}
+
+.floor .floor-bottom .item1>img {
+    margin-top: 30px;
+}
+
+.floor .floor-bottom .item:nth-child(2) {
+    width: 340px;
+    height: 432px;
+}
+
+.floor .floor-bottom .item:nth-of-type(3),
+.floor .floor-bottom .item:nth-child(4),
+.floor .floor-bottom .item:last-child {
+    width: 206px;
+    height: 432px;
+}
+
+.floor .floor-bottom .item3>img,
+.floor .floor-bottom .item:nth-child(4)>img,
+.floor .floor-bottom .item5>img {
+    border-bottom: 1px solid #E2E2E2;
+}
+
+.floor .floor-bottom .item:nth-of-type(3),
+.floor .floor-bottom .item:nth-child(4) {
+    border-right: 1px solid #E2E2E2;
+}
+
+
+
+
+
+/*#endregion 楼层样式 */
+
+/*#endregion 内容区样式 */
+
+/*#region 底部样式 */
+
+/*#region 介绍链接 */
+.page-footer {
+    height: 440px;
+    margin-top: 48px;
+    background-color: #483E3E;
+}
+
+.page-footer .introduction {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-footer .introduction .intro-list {
+    margin-top: 48px;
+    width: 190px;
+    height: 176px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.page-footer .introduction .intro-list li>a {
+    font: lighter 14px "PingFangSC-Regular","Microsoft YaHei",sans-serif;
+    color: #FFF;
+    transition: 0.25s all linear;
+}
+
+.page-footer .introduction .intro-list li>a:hover {
+    color: #DD302D;
+}
+/*#endregion 介绍链接 */
+
+/*#region 分割线*/
+.page-footer .dividing-line {
+    margin-top: 22px;
+    border: 1px solid #584D4D;
+    display: flex;
+}
+/*#endregion 分割线*/
+
+/*#region 底部链接*/
+.page-footer .bottom-links {
+    margin: 47px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFF;
+}
+
+.page-footer .bottom-links .link-list {
+    display: flex;
+}
+
+.page-footer .bottom-links .link-list li>a {
+    font: lighter 12px "PingFangSC-Regular","Microsoft YaHei",sans-serif;
+    color: #FFF;
+    padding: 0 26px;
+    border-right: 1px solid #D9D9D9;
+    transition: 0.25s all linear;
+}
+
+.page-footer .bottom-links .link-list li>a:hover {
+    color: #DD302D;
+}
+
+.page-footer .bottom-links .link-list li:first-child>a {
+    padding-left: 0;
+}
+
+.page-footer .bottom-links .link-list li:last-child>a {
+    padding-right: 0;
+    border-right: 0;
+}
+
+.page-footer .bottom-links>span {
+    margin-top: 10px;
+}
+/*#endregion 底部链接*/
+
+/*#endregion 底部样式 */
